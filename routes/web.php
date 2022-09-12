@@ -15,20 +15,22 @@ use Illuminate\Support\Facades\Route;
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\App;
+use Illuminate\Support\Facades\Auth;
 
 
 
 Route::get('/welcome', function () {
     return view('welcome');
-})->middleware("check_time");
+})->middleware("check_time",'auth');
 
 Route::get('/test', function () {
     return view('test');
 });
 
-Route::get('/{locale?}', [HomeController::class, 'index']);
+// Route::get('/{locale?}', [HomeController::class, 'index']);
 
 
 Auth::routes();
 
-Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+Route::get('/{locale?}', [HomeController::class, 'index']);
+
