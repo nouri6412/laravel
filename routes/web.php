@@ -19,7 +19,7 @@ use Illuminate\Support\Facades\Auth;
 use App\Http\Controllers\ProductController;
 
 
-
+Auth::routes();
 Route::get('/welcome', function () {
     return view('welcome');
 })->middleware("check_time",'auth');
@@ -30,9 +30,9 @@ Route::get('/test', function () {
 
 // Route::get('/{locale?}', [HomeController::class, 'index']);
 
+Route::resource('products', ProductController::class);
+//Route::get('products', [ProductController::class,'index']);
 
-Auth::routes();
 
 Route::get('/{locale?}', [HomeController::class, 'index']);
-Route::resource('products', ProductController::class);
 
