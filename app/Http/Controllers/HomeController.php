@@ -21,6 +21,7 @@ class HomeController extends Controller
 
         return view('theme/'.$theme_name.'/home/index', [
             "message" => __('message.welcome'),
+            "helper" => TestHelperGet(),
             "theme_name" => __($theme_name)
         ]);
     }
