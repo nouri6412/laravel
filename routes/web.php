@@ -20,7 +20,7 @@ use Illuminate\Support\Facades\App;
 
 Route::get('/welcome', function () {
     return view('welcome');
-});
+})->middleware("check_time");
 
 Route::get('/test', function () {
     return view('test');

@@ -17,8 +17,11 @@ class HomeController extends Controller
             app()->setLocale($locale);
         }
 
-        return view('home/index', [
-            "message" => __('message.welcome')
+        $theme_name="first";
+
+        return view('theme/'.$theme_name.'/home/index', [
+            "message" => __('message.welcome'),
+            "theme_name" => __($theme_name)
         ]);
     }
 }
