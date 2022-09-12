@@ -16,6 +16,7 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\App;
 use Illuminate\Support\Facades\Auth;
+use App\Http\Controllers\ProductController;
 
 
 
@@ -33,4 +34,5 @@ Route::get('/test', function () {
 Auth::routes();
 
 Route::get('/{locale?}', [HomeController::class, 'index']);
+Route::resource('products', ProductController::class);
 
