@@ -177,6 +177,7 @@ return [
 
         // my providers
         App\Providers\MyHelperServiceProvider::class,
+        App\Providers\CMSServiceProvider::class,
 
     ],
 

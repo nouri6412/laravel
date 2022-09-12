@@ -22,6 +22,7 @@ class HomeController extends Controller
         return view('theme/'.$theme_name.'/home/index', [
             "message" => __('message.welcome'),
             "helper" => TestHelperGet(),
+            "SiteTitle"=> config('CMS.SiteTitle'),
             "theme_name" => __($theme_name)
         ]);
     }
