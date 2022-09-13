@@ -13,7 +13,7 @@ class ProductController extends Controller
      * @return \Illuminate\Http\Response
      */
     public function index()
-    {
+    { 
         $products = Product::latest()->paginate(5);
 
         return view('products.index', compact('products'))
